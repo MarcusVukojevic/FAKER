@@ -154,19 +154,7 @@ def compute_prnu(img, noise_std=0, filter_std=1.0):
 
 
 
-def residuo(img, deviazione=1.0):
-    
 
-    image = Image.open(img).convert('L')
-    image_array = np.array(image)
-   
-
-    denoised_image = gaussian_filter(image_array, deviazione)
-
-    # Compute the residual (noise)
-    residual = image_array - denoised_image
-
-    return np.array(residual)
 
 # suca
 
@@ -183,31 +171,4 @@ def create_image_with_moving_block(size, block_size, move_distance):
 
     return image
 
-
-import cv2
-import numpy as np
-
-def adaptive_noise_filter(image_path):
-    # Read the image
-    image = cv2.imread(image_path, 0)  # 0 to read image in grayscale
-
-    # Estimate the local mean and variance
-    mean = cv2.blur(image, (3, 3))
-    mean_sq = cv2.blur(image**2, (3, 3))
-    variance = mean_sq - mean**2
-
-    # Estimate the noise variance
-    noise_variance = np.mean(np.var(image))
-
-    # Apply the adaptive Wiener filter
-    with np.errstate(divide='ignore', invalid='ignore'):
-        result = mean + np.where(variance == 0, 0, 
-                                 (variance - noise_variance) / variance) * (image - mean)
-        # Where variance is zero, output mean instead of dividing by zero
-        result[variance == 0] = mean[variance == 0]
-
-    # The estimated noise is the difference between the original and the result
-    noise = image - result
-
-    return noise.astype(np.uint8)
 

@@ -5,6 +5,8 @@ from PIL import Image
 import os
 import numpy as np
 from utils_funct import *
+from filtri import *
+
 
 folder = "TestSet/stylegan2_afhqv2_512x512"
 folder = "TestSet/biggan_512"
@@ -30,7 +32,7 @@ res2 = None
 for img in lista_immagini:
 
     dio = Image.open(f"{folder}/{img}").convert('L')
-    res, denoise = residuo(f"{folder}/{img}")
+    res, denoise = gaussian_filter(f"{folder}/{img}")
     ress = adaptive_noise_filter(f"{folder}/{img}")
 
     denoi = denoise
