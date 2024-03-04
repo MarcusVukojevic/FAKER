@@ -1,0 +1,3 @@
+24-03-04 22:51:35.767 : model_name:drunet_color, image sigma:0.000, model sigma:0.000
+24-03-04 22:51:35.767 : Model path: model_zoo/drunet_color.pth
+24-03-04 22:51:35.767 : testsets/srbsd68

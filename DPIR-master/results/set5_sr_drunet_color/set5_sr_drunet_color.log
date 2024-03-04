@@ -1,0 +1,93 @@
+24-03-04 22:51:49.668 : model_name:drunet_color, image sigma:0.000, model sigma:0.000
+24-03-04 22:51:49.668 : Model path: model_zoo/drunet_color.pth
+24-03-04 22:51:49.668 : testsets/set5
+24-03-04 22:51:50.886 : --------- sf:2 --k: 0 ---------
+24-03-04 22:53:43.162 : model_name:drunet_color, image sigma:0.000, model sigma:0.000
+24-03-04 22:53:43.163 : Model path: model_zoo/drunet_color.pth
+24-03-04 22:53:43.163 : testsets/set5
+24-03-04 22:53:43.167 : --------- sf:2 --k: 0 ---------
+24-03-04 22:54:13.787 : model_name:drunet_color, image sigma:0.000, model sigma:0.000
+24-03-04 22:54:13.787 : Model path: model_zoo/drunet_color.pth
+24-03-04 22:54:13.787 : testsets/set5
+24-03-04 22:54:13.811 : --------- sf:2 --k: 0 ---------
+24-03-04 22:54:32.587 : model_name:drunet_color, image sigma:0.000, model sigma:0.000
+24-03-04 22:54:32.587 : Model path: model_zoo/drunet_color.pth
+24-03-04 22:54:32.587 : testsets/set5
+24-03-04 22:54:32.615 : --------- sf:2 --k: 0 ---------
+24-03-04 22:55:10.198 : model_name:drunet_color, image sigma:0.000, model sigma:0.000
+24-03-04 22:55:10.198 : Model path: model_zoo/drunet_color.pth
+24-03-04 22:55:10.198 : testsets/set5
+24-03-04 22:55:10.224 : --------- sf:2 --k: 0 ---------
+24-03-04 22:55:34.964 : model_name:drunet_color, image sigma:0.000, model sigma:0.000
+24-03-04 22:55:34.964 : Model path: model_zoo/drunet_color.pth
+24-03-04 22:55:34.964 : testsets/set5
+24-03-04 22:55:34.992 : --------- sf:2 --k: 0 ---------
+24-03-04 22:55:52.859 : model_name:drunet_color, image sigma:0.000, model sigma:0.000
+24-03-04 22:55:52.859 : Model path: model_zoo/drunet_color.pth
+24-03-04 22:55:52.859 : testsets/set5
+24-03-04 22:55:52.863 : --------- sf:2 --k: 0 ---------
+24-03-04 22:57:17.389 : ---1--> baby_GT.bmp -- sf:2 --k: 0 PSNR: 36.62dB
+24-03-04 22:57:39.737 : ---2--> bird_GT.bmp -- sf:2 --k: 0 PSNR: 39.00dB
+24-03-04 22:58:06.257 : ---3--> butterfly_GT.bmp -- sf:2 --k: 0 PSNR: 31.26dB
+24-03-04 22:58:29.535 : ---4--> head_GT.bmp -- sf:2 --k: 0 PSNR: 31.88dB
+24-03-04 22:58:58.401 : ---5--> woman_GT.bmp -- sf:2 --k: 0 PSNR: 33.84dB
+24-03-04 22:58:58.404 : ------> Average PSNR(RGB) of (set5) scale factor: (2), kernel: (0) sigma: (0.00): 34.52 dB
+24-03-04 22:58:58.404 : ------> Average PSNR(Y) of (set5) scale factor: (2), kernel: (0) sigma: (0.00): 36.58 dB
+24-03-04 22:58:58.405 : --------- sf:2 --k: 1 ---------
+24-03-04 23:00:26.135 : ---1--> baby_GT.bmp -- sf:2 --k: 1 PSNR: 36.91dB
+24-03-04 23:00:49.015 : ---2--> bird_GT.bmp -- sf:2 --k: 1 PSNR: 39.32dB
+24-03-04 23:01:14.330 : ---3--> butterfly_GT.bmp -- sf:2 --k: 1 PSNR: 31.29dB
+24-03-04 23:01:36.283 : ---4--> head_GT.bmp -- sf:2 --k: 1 PSNR: 32.04dB
+24-03-04 23:02:02.811 : ---5--> woman_GT.bmp -- sf:2 --k: 1 PSNR: 34.11dB
+24-03-04 23:02:02.815 : ------> Average PSNR(RGB) of (set5) scale factor: (2), kernel: (1) sigma: (0.00): 34.73 dB
+24-03-04 23:02:02.815 : ------> Average PSNR(Y) of (set5) scale factor: (2), kernel: (1) sigma: (0.00): 36.81 dB
+24-03-04 23:02:02.815 : --------- sf:2 --k: 2 ---------
+24-03-04 23:03:31.371 : ---1--> baby_GT.bmp -- sf:2 --k: 2 PSNR: 36.26dB
+24-03-04 23:03:54.471 : ---2--> bird_GT.bmp -- sf:2 --k: 2 PSNR: 38.21dB
+24-03-04 23:04:19.705 : ---3--> butterfly_GT.bmp -- sf:2 --k: 2 PSNR: 30.28dB
+24-03-04 23:04:43.173 : ---4--> head_GT.bmp -- sf:2 --k: 2 PSNR: 31.65dB
+24-03-04 23:05:12.183 : ---5--> woman_GT.bmp -- sf:2 --k: 2 PSNR: 33.39dB
+24-03-04 23:05:12.190 : ------> Average PSNR(RGB) of (set5) scale factor: (2), kernel: (2) sigma: (0.00): 33.96 dB
+24-03-04 23:05:12.190 : ------> Average PSNR(Y) of (set5) scale factor: (2), kernel: (2) sigma: (0.00): 36.01 dB
+24-03-04 23:05:12.190 : --------- sf:2 --k: 3 ---------
+24-03-04 23:06:40.284 : ---1--> baby_GT.bmp -- sf:2 --k: 3 PSNR: 35.11dB
+24-03-04 23:07:02.439 : ---2--> bird_GT.bmp -- sf:2 --k: 3 PSNR: 36.40dB
+24-03-04 23:07:27.072 : ---3--> butterfly_GT.bmp -- sf:2 --k: 3 PSNR: 28.72dB
+24-03-04 23:07:51.295 : ---4--> head_GT.bmp -- sf:2 --k: 3 PSNR: 31.06dB
+24-03-04 23:08:18.723 : ---5--> woman_GT.bmp -- sf:2 --k: 3 PSNR: 32.15dB
+24-03-04 23:08:18.726 : ------> Average PSNR(RGB) of (set5) scale factor: (2), kernel: (3) sigma: (0.00): 32.69 dB
+24-03-04 23:08:18.726 : ------> Average PSNR(Y) of (set5) scale factor: (2), kernel: (3) sigma: (0.00): 34.68 dB
+24-03-04 23:08:18.726 : --------- sf:2 --k: 4 ---------
+24-03-04 23:09:44.272 : ---1--> baby_GT.bmp -- sf:2 --k: 4 PSNR: 34.59dB
+24-03-04 23:10:06.517 : ---2--> bird_GT.bmp -- sf:2 --k: 4 PSNR: 35.55dB
+24-03-04 23:10:30.662 : ---3--> butterfly_GT.bmp -- sf:2 --k: 4 PSNR: 28.42dB
+24-03-04 23:10:52.937 : ---4--> head_GT.bmp -- sf:2 --k: 4 PSNR: 31.02dB
+24-03-04 23:11:21.077 : ---5--> woman_GT.bmp -- sf:2 --k: 4 PSNR: 31.70dB
+24-03-04 23:11:21.081 : ------> Average PSNR(RGB) of (set5) scale factor: (2), kernel: (4) sigma: (0.00): 32.26 dB
+24-03-04 23:11:21.081 : ------> Average PSNR(Y) of (set5) scale factor: (2), kernel: (4) sigma: (0.00): 34.22 dB
+24-03-04 23:11:21.081 : --------- sf:2 --k: 5 ---------
+24-03-04 23:12:45.807 : ---1--> baby_GT.bmp -- sf:2 --k: 5 PSNR: 34.47dB
+24-03-04 23:13:07.478 : ---2--> bird_GT.bmp -- sf:2 --k: 5 PSNR: 35.33dB
+24-03-04 23:13:32.355 : ---3--> butterfly_GT.bmp -- sf:2 --k: 5 PSNR: 28.60dB
+24-03-04 23:13:54.321 : ---4--> head_GT.bmp -- sf:2 --k: 5 PSNR: 31.02dB
+24-03-04 23:14:22.748 : ---5--> woman_GT.bmp -- sf:2 --k: 5 PSNR: 32.09dB
+24-03-04 23:14:22.752 : ------> Average PSNR(RGB) of (set5) scale factor: (2), kernel: (5) sigma: (0.00): 32.30 dB
+24-03-04 23:14:22.752 : ------> Average PSNR(Y) of (set5) scale factor: (2), kernel: (5) sigma: (0.00): 34.29 dB
+24-03-04 23:14:22.752 : --------- sf:2 --k: 6 ---------
+24-03-04 23:15:50.112 : ---1--> baby_GT.bmp -- sf:2 --k: 6 PSNR: 34.85dB
+24-03-04 23:16:12.095 : ---2--> bird_GT.bmp -- sf:2 --k: 6 PSNR: 35.99dB
+24-03-04 23:16:36.847 : ---3--> butterfly_GT.bmp -- sf:2 --k: 6 PSNR: 29.63dB
+24-03-04 23:16:59.797 : ---4--> head_GT.bmp -- sf:2 --k: 6 PSNR: 31.01dB
+24-03-04 23:17:26.010 : ---5--> woman_GT.bmp -- sf:2 --k: 6 PSNR: 31.93dB
+24-03-04 23:17:26.014 : ------> Average PSNR(RGB) of (set5) scale factor: (2), kernel: (6) sigma: (0.00): 32.68 dB
+24-03-04 23:17:26.014 : ------> Average PSNR(Y) of (set5) scale factor: (2), kernel: (6) sigma: (0.00): 34.67 dB
+24-03-04 23:17:26.014 : --------- sf:2 --k: 7 ---------
+24-03-04 23:18:49.445 : ---1--> baby_GT.bmp -- sf:2 --k: 7 PSNR: 33.99dB
+24-03-04 23:19:11.440 : ---2--> bird_GT.bmp -- sf:2 --k: 7 PSNR: 34.61dB
+24-03-04 23:19:35.214 : ---3--> butterfly_GT.bmp -- sf:2 --k: 7 PSNR: 27.60dB
+24-03-04 23:19:56.530 : ---4--> head_GT.bmp -- sf:2 --k: 7 PSNR: 30.56dB
+24-03-04 23:20:22.904 : ---5--> woman_GT.bmp -- sf:2 --k: 7 PSNR: 30.89dB
+24-03-04 23:20:22.909 : ------> Average PSNR(RGB) of (set5) scale factor: (2), kernel: (7) sigma: (0.00): 31.53 dB
+24-03-04 23:20:22.909 : ------> Average PSNR(Y) of (set5) scale factor: (2), kernel: (7) sigma: (0.00): 33.47 dB
+24-03-04 23:20:22.909 : ------> Average PSNR of (set5) 33.08 dB
+24-03-04 23:20:22.909 : ------> Average PSNR of (set5) 35.09 dB
