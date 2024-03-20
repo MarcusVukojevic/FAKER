@@ -53,7 +53,7 @@ def main():
     noise_level_img = 15                 # set AWGN noise level for noisy image
     noise_level_model = noise_level_img  # set noise level for model
     model_name = 'drunet_gray'           # set denoiser model, 'drunet_gray' | 'drunet_color'
-    testset_name = 'bsd68'               # set test set,  'bsd68' | 'cbsd68' | 'set12'
+    testset_name = 'dalle-mini_valid'               # set test set,  'bsd68' | 'cbsd68' | 'set12'
     x8 = False                           # default: False, x8 to boost performance
     show_img = False                     # default: False
     border = 0                           # shave boader to calculate PSNR and SSIM
@@ -64,13 +64,14 @@ def main():
         n_channels = 1                   # 1 for grayscale image
 
     model_pool = 'model_zoo'             # fixed
-    testsets = 'testsets'                # fixed
-    results = 'results'                  # fixed
+    testsets = 'TestSet'                # fixed
+    results = 'gpu'                  # fixed
     task_current = 'dn'                  # 'dn' for denoising
     result_name = testset_name + '_' + task_current + '_' + model_name
 
     model_path = os.path.join(model_pool, model_name+'.pth')
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = 'mps:0'
     torch.cuda.empty_cache()
 
     # ----------------------------------------
@@ -81,9 +82,7 @@ def main():
     E_path = os.path.join(results, result_name)   # E_path, for Estimated images
     util.mkdir(E_path)
 
-    logger_name = result_name
-    utils_logger.logger_info(logger_name, log_path=os.path.join(E_path, logger_name+'.log'))
-    logger = logging.getLogger(logger_name)
+    
 
     # ----------------------------------------
     # load model
@@ -96,16 +95,16 @@ def main():
     for k, v in model.named_parameters():
         v.requires_grad = False
     model = model.to(device)
-    logger.info('Model path: {:s}'.format(model_path))
+    #logger.info('Model path: {:s}'.format(model_path))
     number_parameters = sum(map(lambda x: x.numel(), model.parameters()))
-    logger.info('Params number: {}'.format(number_parameters))
+    #logger.info('Params number: {}'.format(number_parameters))
 
     test_results = OrderedDict()
     test_results['psnr'] = []
     test_results['ssim'] = []
 
-    logger.info('model_name:{}, model sigma:{}, image sigma:{}'.format(model_name, noise_level_img, noise_level_model))
-    logger.info(L_path)
+    #logger.info('model_name:{}, model sigma:{}, image sigma:{}'.format(model_name, noise_level_img, noise_level_model))
+    #logger.info(L_path)
     L_paths = util.get_image_paths(L_path)
 
     for idx, img in enumerate(L_paths):
@@ -152,7 +151,7 @@ def main():
         ssim = util.calculate_ssim(img_E, img_H, border=border)
         test_results['psnr'].append(psnr)
         test_results['ssim'].append(ssim)
-        logger.info('{:s} - PSNR: {:.2f} dB; SSIM: {:.4f}.'.format(img_name+ext, psnr, ssim))
+        #logger.info('{:s} - PSNR: {:.2f} dB; SSIM: {:.4f}.'.format(img_name+ext, psnr, ssim))
 
         # ------------------------------------
         # save results
@@ -162,7 +161,7 @@ def main():
 
     ave_psnr = sum(test_results['psnr']) / len(test_results['psnr'])
     ave_ssim = sum(test_results['ssim']) / len(test_results['ssim'])
-    logger.info('Average PSNR/SSIM(RGB) - {} - PSNR: {:.2f} dB; SSIM: {:.4f}'.format(result_name, ave_psnr, ave_ssim))
+    #logger.info('Average PSNR/SSIM(RGB) - {} - PSNR: {:.2f} dB; SSIM: {:.4f}'.format(result_name, ave_psnr, ave_ssim))
 
 
 if __name__ == '__main__':

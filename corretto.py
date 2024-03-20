@@ -9,7 +9,7 @@ lista_folders = [ "TestSet/dalle-mini_valid",  "TestSet/dalle_2", "TestSet/eg3d"
                   "TestSet/stylegan3_t_ffhqu_1024x1024" ,  "TestSet/stylegan2_afhqv2_512x512",  "TestSet/biggan_512"]
 
 cartella_ori = "TestSet/dalle-mini_valid"
-cartella_noise = "results/dalle-mini_valid_sr_drunet_color"
+cartella_noise = "gpu/dalle-mini_valid_dn_drunet_gray"
 
 
 lista_immagini_1 = os.listdir(cartella_ori)
@@ -17,7 +17,7 @@ lista_immagini_2 = os.listdir(cartella_noise)
 
 # Estrai i nomi dei file dalle liste
 nomi_file_1 = [file.split(".")[0] for file in lista_immagini_1]
-nomi_file_2 = [file[:-23] for file in lista_immagini_2]
+nomi_file_2 = [file.split(".")[0] for file in lista_immagini_2]
 
 # Ordina i nomi dei file
 nomi_file_1.sort()
@@ -27,7 +27,7 @@ nomi_file_2.sort()
 
 # Riordina le liste delle immagini in base all'ordinamento dei nomi dei file
 lista_immagini_1_ordinate = [file + ".png" for file in nomi_file_1]
-lista_immagini_2_ordinate = [file + "_x1_k0_drunet_color.png" for file in nomi_file_2]
+lista_immagini_2_ordinate = [file + ".png" for file in nomi_file_2]
 
 lista_immagini_rumore = []
 
@@ -58,7 +58,7 @@ magnitude_spectrum = 20 * np.log(np.abs(f_shift))
 
 plt.imshow(magnitude_spectrum)
 plt.title(f'Deep Filter'), plt.xticks([]), plt.yticks([])
-plt.savefig('FILTRI/dalle_mini_denoised.png')
+plt.savefig('FILTRI/dalle-mini_valid.png')
 
 
 
