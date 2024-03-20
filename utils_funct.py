@@ -124,36 +124,6 @@ def scala_a_255(magnitude):
 
     return magnitude.astype(np.uint8)
 
-from scipy.fftpack import fft2, ifft2
-from scipy.ndimage import gaussian_filter
-
-def compute_prnu(img, noise_std=0, filter_std=1.0):
-    """
-    Compute the PRNU pattern of an image using a Wiener filter.
-
-    :param image: Input image (2D numpy array).
-    :param noise_std: Standard deviation of the noise.
-    :param filter_std: Standard deviation for Gaussian filter.
-    :return: PRNU pattern.
-    """
-    image = Image.open(img).convert('L')
-    image_array = np.array(image)
-    # Apply a Gaussian filter (denoising)
-    denoised_image = gaussian_filter(image_array, filter_std)
-
-    # Compute the residual (noise)
-    residual = image_array - denoised_image
-
-    # Apply Wiener filter in the frequency domain
-    image_fft = fft2(residual)
-    psd = np.abs(image_fft)  # Power spectral density
-    wiener_filter = psd / (psd + noise_std ** 2)
-    prnu_pattern = np.real(ifft2(image_fft * wiener_filter))
-
-    return prnu_pattern
-
-
-
 
 
 # suca
@@ -172,3 +142,17 @@ def create_image_with_moving_block(size, block_size, move_distance):
     return image
 
 
+# Function to apply Fourier Transform to an image
+def apply_fourier_transform(image_path):
+    # Load the image
+    image = Image.open(image_path).convert('L')  # convert image to grayscale
+    image_array = np.array(image)
+
+    # Apply Fourier Transform
+    f_transform = np.fft.fft2(image_array)
+    f_shift = np.fft.fftshift(f_transform)
+
+    # Get magnitude spectrum
+    magnitude_spectrum = 20 * np.log(np.abs(f_shift))
+
+    return magnitude_spectrum

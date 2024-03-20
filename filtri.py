@@ -42,11 +42,11 @@ def adaptive_noise_filter(image_path):
     return noise.astype(np.uint8)
 
 
-def gaussian_filter(image_path, deviazione=1.0):
+def gaussian_filter(image_path):
 
     image = cv2.imread(image_path, 0)
 
-    denoised_image = gaussian_filter(image, deviazione)
+    denoised_image = cv2.GaussianBlur(image, (5, 5), 1)
 
     # Compute the residual (noise)
     residual = image - denoised_image
@@ -56,7 +56,8 @@ def gaussian_filter(image_path, deviazione=1.0):
 
 def wavelet_denoise(image, wavelet='db1', level=1):
     # Convert image to float
-    image = img_as_float(image)
+    image = cv2.imread(image, 0)
+    image = image.astype(float)
     
     # Decompose the image into wavelet components
     coeffs = pywt.wavedec2(image, wavelet, level=level)
